@@ -1,15 +1,21 @@
 import 'package:carousel_slider/carousel_slider.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
+import 'package:flutter_application_1/Screens/pic1_details.dart';
+import 'package:flutter_application_1/Screens/pic2_details.dart';
+import 'package:flutter_application_1/Screens/pic3_details.dart';
 class PromoCard extends StatelessWidget {
   const PromoCard({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return Padding(padding: const  EdgeInsets.all(10),
-    child: ListView(
-        children: [
-          CarouselSlider(items: [
-            Container(
+    return Container(
+      child: CarouselSlider(items: [
+            GestureDetector(onTap: () {
+                Navigator.push(
+                  context , MaterialPageRoute(builder: (context) =>  Pic1Details()));
+            }, child: Container(
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(10),
                 image: const DecorationImage(
@@ -17,7 +23,36 @@ class PromoCard extends StatelessWidget {
                   fit: BoxFit.cover,
                 )
               ),
-            )
+            ),
+            ),
+            GestureDetector(onTap: () {
+                Navigator.push(
+                  context , MaterialPageRoute(builder: (context) =>  const Pic2Details()));
+            },child: Container(
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(10),
+                image: const DecorationImage(
+                  image: AssetImage('assets/pic2.jpeg'),
+                  fit:BoxFit.cover,
+
+                  )
+              ),
+            ),
+            ),
+            GestureDetector(onTap: () {
+                Navigator.push(
+                  context , MaterialPageRoute(builder: (context) =>  const Pic3Details()));
+            },child: Container(
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(10),
+                image: const DecorationImage(
+                  image: AssetImage('assets/pic3.webp'),
+                  fit:BoxFit.cover,
+
+                  )
+              ),
+            ),
+            ),
           ], 
           options:CarouselOptions( 
                 height: 180.0, 
@@ -30,9 +65,7 @@ class PromoCard extends StatelessWidget {
                 viewportFraction: 0.8, 
               ), 
               ),
-        ],
-        )
-      );
+    );
       
   }
 }

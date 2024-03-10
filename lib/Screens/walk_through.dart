@@ -62,7 +62,7 @@ class _WalkThroughState extends State<WalkThrough> {
                     onPressed: () {
                       Navigator.push(
                         context, 
-                        MaterialPageRoute(builder: (Context) => Login()));
+                        MaterialPageRoute(builder: (Context) => const Login()));
                     },
                     child: Image.asset('assets/arrow.jpg'),
                     ),

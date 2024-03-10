@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/Screens/Terms_and_Conditions.dart';
 import 'package:flutter_application_1/Screens/main_page.dart';
+import 'package:flutter_application_1/Screens/signup.dart';
 
 class Login extends StatefulWidget {
   const Login({super.key});
@@ -10,7 +11,7 @@ class Login extends StatefulWidget {
 }
 
 class _LoginState extends State<Login> {
-  bool accept_terms = false, _obscureText = true;
+  bool acceptTerms = false, _obscureText = true;
   
   @override
   Widget build(BuildContext context) {
@@ -113,9 +114,9 @@ class _LoginState extends State<Login> {
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                   Checkbox(value: accept_terms, onChanged: (value) {
+                   Checkbox(value: acceptTerms, onChanged: (value) {
                     setState(() {
-                      accept_terms = value!;
+                      acceptTerms = value!;
                     }
                     );
                   },
@@ -131,6 +132,7 @@ class _LoginState extends State<Login> {
                         fontSize: 15,
                         fontWeight: FontWeight.normal,
                         decoration: TextDecoration.underline,
+                        color: Colors.blue
                       ),
                       ),
                   ),
@@ -141,7 +143,7 @@ class _LoginState extends State<Login> {
               children: [
                 
                   ElevatedButton(
-              onPressed: accept_terms ? () {
+              onPressed: acceptTerms ? () {
                 Navigator.push(context,
                  MaterialPageRoute(builder: ((context) => const MainPage()))
                  );
@@ -150,6 +152,7 @@ class _LoginState extends State<Login> {
               style: ButtonStyle(
                     //backgroundColor: MaterialStateProperty.all(Colors.blue),
                     padding: MaterialStateProperty.all(const EdgeInsetsDirectional.symmetric(horizontal: 150)),
+                    
                   ),
                   child:  const Text('Login',
                     style: TextStyle(
@@ -159,11 +162,42 @@ class _LoginState extends State<Login> {
                     ),
                     ),
                   
+
               ),
   
               ],
-             )
-          
+             ),
+             const SizedBox(height: 20,),
+             Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                const Text('Don\'t have an account',
+                style: TextStyle(
+                  fontFamily: 'Poppins',
+                  fontWeight: FontWeight.normal,
+                ),
+                ),
+                const SizedBox( width: 5,),
+
+                GestureDetector(
+                    onTap: () {
+                      Navigator.push(
+                        context, MaterialPageRoute(builder: (context) => SignUp())
+                        );
+                    },
+                    child: const Text('Sign Up',
+                    style: TextStyle(
+                      fontFamily: 'Poppins',
+                      fontWeight: FontWeight.normal,
+                      color: Colors.blue,
+                      decoration: TextDecoration.underline
+                    ),
+                    )
+
+                  )
+                
+              ],
+            )
           ],    
         ),
         ),
