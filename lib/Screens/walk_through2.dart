@@ -1,14 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_application_1/Screens/walk_through2.dart';
+import 'package:flutter_application_1/Screens/login.dart';
 
-class WalkThrough extends StatefulWidget {
-  const WalkThrough({super.key});
+class WalkThrough2 extends StatelessWidget {
+  const WalkThrough2({super.key});
 
-  @override
-  State<WalkThrough> createState() => _WalkThroughState();
-}
-
-class _WalkThroughState extends State<WalkThrough> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -22,7 +17,7 @@ class _WalkThroughState extends State<WalkThrough> {
                 left: 30,
                 top: 25,
                 child: Image.asset(
-                  'assets/Rectangle 8girl.png',
+                  'assets/Rectangle 8walkthrougn2.png',
                   width: 328,
                   height: 450,
                 ),
@@ -31,7 +26,7 @@ class _WalkThroughState extends State<WalkThrough> {
                   top: 500,
                   left: 16,
                   child: Text(
-                    '20% Discount\nNew Arrival Products',
+                    'Take Advantage\nOf The Offer Shopping',
                     style: TextStyle(
                       fontFamily: 'Poppins',
                       fontWeight: FontWeight.bold,
@@ -42,7 +37,7 @@ class _WalkThroughState extends State<WalkThrough> {
                 top: 600,
                 left: 16,
                 child: Text(
-                  'Publish up your selfies to make yourself\nmore beautiful with this app.',
+                  'Embark on a stylish journey with us as\nwe guide you through our intuitive\nfeatures',
                   style: TextStyle(
                     fontFamily: 'Poppins',
                     fontWeight: FontWeight.normal,
@@ -56,10 +51,8 @@ class _WalkThroughState extends State<WalkThrough> {
                 child: FloatingActionButton(
                   shape: const CircleBorder(),
                   onPressed: () {
-                    Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                            builder: (context) => const WalkThrough2()));
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (context) => const Login()));
                   },
                   child: Image.asset('assets/arrow.jpg'),
                 ),
