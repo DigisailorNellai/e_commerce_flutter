@@ -6,6 +6,7 @@ import 'package:flutter_application_1/Screens/signup.dart';
 class Login extends StatefulWidget {
   const Login({super.key});
 
+
   @override
   State<Login> createState() => _LoginState();
 }
@@ -25,11 +26,11 @@ class _LoginState extends State<Login> {
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
              Container(
-              padding: EdgeInsets.all(10),
-              height: 200,
+              padding: const EdgeInsets.all(10),
+              height: 250,
               decoration: const BoxDecoration(
                 image: DecorationImage(
-                  image: AssetImage('assets/anner.jpg'),
+                  image: AssetImage('assets/Rectangle 28.png'),
                   fit: BoxFit.cover,
                 )
               ),
@@ -38,8 +39,12 @@ class _LoginState extends State<Login> {
             Container(
               padding: const EdgeInsets.all(20),
               alignment: Alignment.center,
-              decoration:  BoxDecoration(
-              borderRadius: BorderRadius.circular(50),
+              decoration:  const BoxDecoration(
+              borderRadius: BorderRadius.only(
+                topLeft: Radius.circular(50),
+                topRight: Radius.circular(50),
+              ),
+              //color:  Color.fromARGB(255, 124, 185, 236),
               ),
               child: const Center(
                 child: Text( 'Welcome Home',
@@ -55,8 +60,10 @@ class _LoginState extends State<Login> {
               //SizedBox(height: 20,),
                Padding(padding: const EdgeInsets.all(20),
               child: Column(
+                
                 //mainAxisAlignment: MainAxisAlignment.center,
                 children: [
+
                   Container(
                     width: 300,
                     decoration: BoxDecoration(
