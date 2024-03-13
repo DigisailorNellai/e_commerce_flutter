@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_application_1/Screens/login.dart';
+import 'package:flutter_application_1/Screens/walk_%20through3.dart';
 
 class WalkThrough2 extends StatelessWidget {
   const WalkThrough2({super.key});
@@ -52,7 +52,7 @@ class WalkThrough2 extends StatelessWidget {
                   shape: const CircleBorder(),
                   onPressed: () {
                     Navigator.push(context,
-                        MaterialPageRoute(builder: (context) => const Login()));
+                        MaterialPageRoute(builder: (context) => const WalkThrough3()));
                   },
                   child: Image.asset('assets/arrow.jpg'),
                 ),

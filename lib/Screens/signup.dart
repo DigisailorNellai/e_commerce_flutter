@@ -142,15 +142,14 @@ class _SignUpState extends State<SignUp> {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   ElevatedButton(
-                    onPressed: acceptTerms
-                        ? () {
+                    onPressed: () {
                             Navigator.push(
                                 context,
                                 MaterialPageRoute(
                                     builder: ((context) => const Login())));
                             // Perform login action if terms are accepted
-                          }
-                        : null,
+                          },
+                        
                     style: ButtonStyle(
                       backgroundColor: MaterialStateProperty.all(Colors.purple),
                       padding: MaterialStateProperty.all(
