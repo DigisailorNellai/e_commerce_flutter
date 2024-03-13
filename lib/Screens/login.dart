@@ -144,67 +144,63 @@ class _LoginState extends State<Login> {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   ElevatedButton(
-                    onPressed: acceptTerms
-                        ? () {
-                            Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                    builder: ((context) => const MainPage())));
-                            // Perform login action if terms are accepted
-                          }
-                        : null,
-                    style: ButtonStyle(
-                      //backgroundColor: MaterialStateProperty.all(Colors.blue),
-                      padding: MaterialStateProperty.all(
-                          const EdgeInsetsDirectional.symmetric(
-                              horizontal: 150)),
+              onPressed: acceptTerms ? () {
+                Navigator.push(context,
+                 MaterialPageRoute(builder: ((context) => const MainPage()))
+                 );
+                // Perform login action if terms are accepted
+              } : null,
+              style: ButtonStyle(
+                    //backgroundColor: MaterialStateProperty.all(Colors.blue),
+                    padding: MaterialStateProperty.all(const EdgeInsetsDirectional.symmetric(horizontal: 150)),
+                    
+                  ),
+                  child:  const Text('Login',
+                    style: TextStyle(
+                      color: Colors.black,
+                      fontFamily: 'Poppins',
+                      fontWeight: FontWeight.bold,
                     ),
-                    child: const Text(
-                      'Login',
-                      style: TextStyle(
-                        color: Colors.black,
-                        fontFamily: 'Poppins',
-                        fontWeight: FontWeight.bold,
-                      ),
                     ),
                   ),
                 ],
               ),
-              const SizedBox(
-                height: 20,
-              ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  const Text(
-                    'Don\'t have an account',
+  
+              ],
+             ),
+             const SizedBox(height: 20,),
+             Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                const Text('Don\'t have an account',
+                style: TextStyle(
+                  fontFamily: 'Poppins',
+                  fontWeight: FontWeight.normal,
+                ),
+                ),
+                const SizedBox( width: 5,),
+
+                GestureDetector(
+                    onTap: () {
+                      Navigator.push(
+                        context, MaterialPageRoute(builder: (context) => SignUp())
+                        );
+                    },
+                    child: const Text('Sign Up',
                     style: TextStyle(
                       fontFamily: 'Poppins',
                       fontWeight: FontWeight.normal,
+                      color: Colors.blue,
+                      decoration: TextDecoration.underline
                     ),
-                  ),
-                  const SizedBox(
-                    width: 5,
-                  ),
-                  GestureDetector(
-                      onTap: () {
-                        Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                                builder: (context) => const MainPage()));
-                      },
-                      child: const Text(
-                        'Sign Up',
-                        style: TextStyle(
-                            fontFamily: 'Poppins',
-                            fontWeight: FontWeight.normal,
-                            color: Colors.blue,
-                            decoration: TextDecoration.underline),
-                      ))
-                ],
-              )
-            ],
-          ),
+                    )
+
+                  )
+                
+              ],
+            )
+          ],    
+        ),
         ),
       ),
     );

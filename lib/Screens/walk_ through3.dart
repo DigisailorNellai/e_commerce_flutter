@@ -1,14 +1,15 @@
+// ignore: file_names
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/Screens/login.dart';
 
-class WalkThrough extends StatefulWidget {
-  const WalkThrough({super.key});
+class WalkThrough3 extends StatefulWidget {
+  const WalkThrough3({super.key});
 
   @override
-  State<WalkThrough> createState() => _WalkThroughState();
+  State<WalkThrough3> createState() => _WalkThroughState();
 }
 
-class _WalkThroughState extends State<WalkThrough> {
+class _WalkThroughState extends State<WalkThrough3> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -22,7 +23,7 @@ class _WalkThroughState extends State<WalkThrough> {
                 left: 30,
                 top: 25,
                 child: Image.asset(
-                  'assets/Rectangle 8girl.png',
+                  'assets/Rectangle 8.png',
                   width: 328,
                   height: 450,
                 ),
@@ -31,7 +32,7 @@ class _WalkThroughState extends State<WalkThrough> {
                   top: 500,
                   left: 16,
                   child: Text(
-                    '20% Discount\nNew Arrival Products',
+                    'All Types Of Offers\nwithin Your Reach',
                     style: TextStyle(
                       fontFamily: 'Poppins',
                       fontWeight: FontWeight.bold,
@@ -42,7 +43,7 @@ class _WalkThroughState extends State<WalkThrough> {
                   top: 600,
                   left: 16,
                   child: Text(
-                    'Publish up your selfies to make yourself\nmore beautiful with this app.',
+                    'Discover the latest trends,create\npersonalized outfits and shop\neffortlessly',
                     style: TextStyle(
                       fontFamily: 'Poppins',
                       fontWeight: FontWeight.normal,
