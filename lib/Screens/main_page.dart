@@ -26,7 +26,7 @@ int myIndex = 0;
           children: [
             TopBar(),
             PromoCard(),
-            Gender(),
+            //Gender(),
       ]
         ),
       ),
