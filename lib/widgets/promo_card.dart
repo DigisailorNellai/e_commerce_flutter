@@ -1,7 +1,5 @@
 import 'package:carousel_slider/carousel_slider.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:flutter_application_1/Screens/pic1_details.dart';
 import 'package:flutter_application_1/Screens/pic2_details.dart';
 import 'package:flutter_application_1/Screens/pic3_details.dart';
@@ -10,12 +8,15 @@ class PromoCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return SizedBox(
+        height: 200,
       child: CarouselSlider(items: [
             GestureDetector(onTap: () {
                 Navigator.push(
                   context , MaterialPageRoute(builder: (context) =>  Pic1Details()));
             }, child: Container(
+              width: 298,
+              height: 179,
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(10),
                 image: const DecorationImage(
@@ -29,6 +30,8 @@ class PromoCard extends StatelessWidget {
                 Navigator.push(
                   context , MaterialPageRoute(builder: (context) =>  const Pic2Details()));
             },child: Container(
+              width: 298,
+              height: 179,
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(10),
                 image: const DecorationImage(
@@ -43,6 +46,8 @@ class PromoCard extends StatelessWidget {
                 Navigator.push(
                   context , MaterialPageRoute(builder: (context) =>  const Pic3Details()));
             },child: Container(
+              width: 298,
+              height: 179,
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(10),
                 image: const DecorationImage(

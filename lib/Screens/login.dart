@@ -23,7 +23,7 @@ class _LoginState extends State<Login> {
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
               Container(
-                padding: const EdgeInsets.all(10),
+                padding: EdgeInsets.all(10),
                 height: 200,
                 decoration: const BoxDecoration(
                     image: DecorationImage(
