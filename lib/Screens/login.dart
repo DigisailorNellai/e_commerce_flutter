@@ -27,7 +27,7 @@ class _LoginState extends State<Login> {
                 height: 200,
                 decoration: const BoxDecoration(
                     image: DecorationImage(
-                  image: AssetImage('assets/anner.jpg'),
+                  image: AssetImage('assets/Rectangle 28.png'),
                   fit: BoxFit.cover,
                 )),
               ),
@@ -151,7 +151,7 @@ class _LoginState extends State<Login> {
                 // Perform login action if terms are accepted
               } : null,
               style: ButtonStyle(
-                    //backgroundColor: MaterialStateProperty.all(Colors.blue),
+                    backgroundColor: MaterialStateProperty.all(Colors.purple),
                     padding: MaterialStateProperty.all(const EdgeInsetsDirectional.symmetric(horizontal: 150)),
                     
                   ),
@@ -165,9 +165,7 @@ class _LoginState extends State<Login> {
                   ),
                 ],
               ),
-  
-              ],
-             ),
+
              const SizedBox(height: 20,),
              Row(
               mainAxisAlignment: MainAxisAlignment.center,
