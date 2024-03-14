@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/Screens/OTP_page.dart';
 
 import 'package:flutter_application_1/Screens/login.dart';
 
@@ -142,14 +143,15 @@ class _SignUpState extends State<SignUp> {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   ElevatedButton(
-                    onPressed: () {
+                    onPressed: acceptTerms
+                        ? () {
                             Navigator.push(
                                 context,
                                 MaterialPageRoute(
                                     builder: ((context) => const Login())));
                             // Perform login action if terms are accepted
-                          },
-                        
+                          }
+                        : null,
                     style: ButtonStyle(
                       backgroundColor: MaterialStateProperty.all(Colors.purple),
                       padding: MaterialStateProperty.all(

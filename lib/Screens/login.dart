@@ -27,7 +27,7 @@ class _LoginState extends State<Login> {
                 height: 200,
                 decoration: const BoxDecoration(
                     image: DecorationImage(
-                  image: AssetImage('assets/Rectangle 28.png'),
+                  image: AssetImage('assets/anner.jpg'),
                   fit: BoxFit.cover,
                 )),
               ),
@@ -151,11 +151,11 @@ class _LoginState extends State<Login> {
                 // Perform login action if terms are accepted
               } : null,
               style: ButtonStyle(
-                    backgroundColor: MaterialStateProperty.all(Colors.purple),
+                    //backgroundColor: MaterialStateProperty.all(Colors.blue),
                     padding: MaterialStateProperty.all(const EdgeInsetsDirectional.symmetric(horizontal: 150)),
                     
                   ),
-                  child:  const Text('Sign In',
+                  child:  const Text('Login',
                     style: TextStyle(
                       color: Colors.black,
                       fontFamily: 'Poppins',
@@ -166,40 +166,38 @@ class _LoginState extends State<Login> {
                 ],
               ),
   
-              
+              ],
+             ),
              const SizedBox(height: 20,),
              Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                const Text('Don\'t have an account',
-                style: TextStyle(
-                  fontFamily: 'Poppins',
-                  fontWeight: FontWeight.normal,
+                const Text(
+                  'Don\'t have an account',
+                  style: TextStyle(
+                    fontFamily: 'Poppins',
+                    fontWeight: FontWeight.normal,
+                  ),
                 ),
+                const SizedBox(
+                  width: 5,
                 ),
-                const SizedBox( width: 5,),
-
                 GestureDetector(
                     onTap: () {
-                      Navigator.push(
-                        context, MaterialPageRoute(builder: (context) => SignUp())
-                        );
+                      Navigator.push(context,
+                          MaterialPageRoute(builder: (context) => SignUp()));
                     },
-                    child: const Text('Sign Up',
-                    style: TextStyle(
-                      fontFamily: 'Poppins',
-                      fontWeight: FontWeight.normal,
-                      color: Colors.blue,
-                      decoration: TextDecoration.underline
-                    ),
-                    )
-
-                  )
-                
+                    child: const Text(
+                      'Sign Up',
+                      style: TextStyle(
+                          fontFamily: 'Poppins',
+                          fontWeight: FontWeight.normal,
+                          color: Colors.blue,
+                          decoration: TextDecoration.underline),
+                    ))
               ],
-            )
-          ],    
-        ),
+            ),
+          ]),
         ),
       ),
     );
