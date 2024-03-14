@@ -1,5 +1,8 @@
 //import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/Screens/cart.dart';
+import 'package:flutter_application_1/Screens/favorites.dart';
+import 'package:flutter_application_1/Screens/user.dart';
 import 'package:flutter_application_1/widgets/gender.dart';
 import 'package:flutter_application_1/widgets/top_bar.dart';
 import 'package:flutter_application_1/widgets/promo_card.dart';
@@ -18,6 +21,7 @@ class _MainPageState extends State<MainPage>  {
   
 int myIndex = 0;
 
+    // Navigate to the next page based on the se
   @override
   Widget build(BuildContext context) {
     return  Scaffold(
@@ -26,10 +30,12 @@ int myIndex = 0;
           children: [
             TopBar(),
             PromoCard(),
-            //Gender(),
+            Gender(),
+            
       ]
         ),
       ),
+      
       bottomNavigationBar: Padding(
         padding: const EdgeInsets.all(20),
                   child: ClipRRect(
@@ -42,6 +48,37 @@ int myIndex = 0;
           setState(() {
             myIndex = index;
           });
+          switch (index) {
+      case 0:
+        // Navigate to the first page
+        Navigator.push(
+          context,
+          MaterialPageRoute(builder: (context) => MainPage()),
+        );
+        break;
+      case 1:
+        // Navigate to the second page
+        Navigator.push(
+          context,
+          MaterialPageRoute(builder: (context) => Favorite()),
+        );
+        break;
+        case 2:
+        // Navigate to the second page
+        Navigator.push(
+          context,
+          MaterialPageRoute(builder: (context) => Cart()),
+        );
+        break;
+        case 3:
+        // Navigate to the second page
+        Navigator.push(
+          context,
+          MaterialPageRoute(builder: (context) => User()),
+        );
+        break;
+      // Add cases for additional pages if needed
+    }
         },
         currentIndex: myIndex,
         items: const [

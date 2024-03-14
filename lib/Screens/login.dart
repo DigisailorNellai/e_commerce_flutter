@@ -23,7 +23,7 @@ class _LoginState extends State<Login> {
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
               Container(
-                padding: EdgeInsets.all(10),
+                padding: const EdgeInsets.all(10),
                 height: 200,
                 decoration: const BoxDecoration(
                     image: DecorationImage(
@@ -151,11 +151,11 @@ class _LoginState extends State<Login> {
                 // Perform login action if terms are accepted
               } : null,
               style: ButtonStyle(
-                    //backgroundColor: MaterialStateProperty.all(Colors.blue),
+                    backgroundColor: MaterialStateProperty.all(Colors.purple),
                     padding: MaterialStateProperty.all(const EdgeInsetsDirectional.symmetric(horizontal: 150)),
                     
                   ),
-                  child:  const Text('Login',
+                  child:  const Text('Sign In',
                     style: TextStyle(
                       color: Colors.black,
                       fontFamily: 'Poppins',
