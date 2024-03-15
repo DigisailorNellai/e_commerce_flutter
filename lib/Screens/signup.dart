@@ -118,14 +118,17 @@ class _SignUpState extends State<SignUp> {
                           labelText: 'Password',
                           contentPadding: const EdgeInsets.all(10),
                           suffixIcon: IconButton(
-                              icon: Icon(_obscureText
-                                  ? Icons.visibility_off
-                                  : Icons.visibility),
-                              onPressed: () {
-                                setState(() {
+                            icon: Icon(_obscureText
+                                ? Icons.visibility_off
+                                : Icons.visibility),
+                            onPressed: () {
+                              setState(
+                                () {
                                   _obscureText = !_obscureText;
-                                });
-                              }),
+                                },
+                              );
+                            },
+                          ),
                           border: OutlineInputBorder(
                             borderRadius: BorderRadius.circular(20),
                           ),
