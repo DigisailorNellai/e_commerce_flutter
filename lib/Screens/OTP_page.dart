@@ -1,9 +1,11 @@
 // ignore: file_names
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'dart:async';
+import 'package:flutter/widgets.dart';
 
 import 'package:flutter_application_1/Screens/login.dart';
+import 'package:flutter_application_1/Screens/signup.dart';
 
 class OtpPage extends StatefulWidget {
   const OtpPage({super.key});
@@ -114,17 +116,15 @@ class _OtpPageState extends State<OtpPage> {
               const SizedBox(
                 height: 40,
               ),
-              Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Container(
-                    color: Colors.purple,
-                    height: 48,
-                    width: 312,
-                    child: ElevatedButton(
+            
+        
+             Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                  ElevatedButton(
                       style: ButtonStyle(
-                        backgroundColor:
-                            MaterialStateProperty.all(Colors.purple),
+                      backgroundColor: const MaterialStatePropertyAll(Colors.purple),
+                            
                         padding: MaterialStateProperty.all(
                             const EdgeInsetsDirectional.symmetric(
                                 horizontal: 150)),
@@ -135,31 +135,49 @@ class _OtpPageState extends State<OtpPage> {
                       },
                       child: const Text(
                         'Continue',
-                        style: TextStyle(color: Colors.white),
+                        style: TextStyle(color: Colors.black),
                       ),
                     ),
-                  ),
-                ],
-              ),
-              const SizedBox(
-                height: 20,
-              ),
-              const Row(
+              ],
+            ),
+            const SizedBox(height: 20,),
+              Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Text(
-                    'Don\'t recieve the OTP,Resend OTP',
+                  const Text(
+                    'Didn\'t receive the OTP',
                     style: TextStyle(
                       fontFamily: 'Poppins',
                       fontWeight: FontWeight.normal,
                     ),
                   ),
+                  const SizedBox(
+                    width: 5,
+                  ),
+                  GestureDetector(
+                      onTap: () {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => const SignUp() ));
+                      },
+                      child: const Text(
+                        'Resend OTP',
+                        style: TextStyle(
+                            fontFamily: 'Poppins',
+                            fontWeight: FontWeight.normal,
+                            color: Colors.blue,
+                            decoration: TextDecoration.underline),
+                      ))
+                ],
+              )
                 ],
               ),
-            ],
+                          
+            
           ),
         ),
-      ),
+
     );
   }
 }

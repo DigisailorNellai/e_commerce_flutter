@@ -1,8 +1,7 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_application_1/Screens/notification.dart';
-import 'package:flutter_application_1/widgets/Top_bar.dart';
-import 'package:flutter_application_1/widgets/designers.dart';
 
 class Cart extends StatefulWidget {
   const Cart({super.key});
@@ -66,15 +65,14 @@ class _CartState extends State<Cart> {
                     child: Image.asset('assets/Rectangle 1550.png'),
                   ),
                   const Align(
-                    alignment: Alignment.topLeft,
+                    alignment: Alignment.topCenter,
                     child: Padding(
                       padding: EdgeInsets.all(21),
                       child: Text('New Collections'),
                     ),
                   )
                 ],
-              ),
-              const Designer(),
+              )
             ],
           ),
         ),
