@@ -1,24 +1,35 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/Screens/accessories_design.dart';
 import 'package:flutter_application_1/Screens/women_design.dart';
+import 'package:flutter_application_1/men_design.dart';
 
-class Designer extends StatelessWidget {
+class Designer extends StatefulWidget {
   const Designer({super.key});
 
   @override
+  State<Designer> createState() => _DesignerState();
+}
+
+class _DesignerState extends State<Designer> {
+  @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.only(left: 30),
+      padding: const EdgeInsets.only(left: 10),
       child: SizedBox(
         child: Column(
           children: [
-            const Align(
-              alignment: Alignment.topLeft,
-              child: Text(
-                'Category',
-                style: TextStyle(
+            const Padding(
+              padding: EdgeInsets.only(left: 10),
+              child: Align(
+                alignment: Alignment.topLeft,
+                child: Text(
+                  'Category',
+                  style: TextStyle(
                     fontFamily: 'Poppins',
-                    fontSize: 20,
-                    fontWeight: FontWeight.normal),
+                    fontWeight: FontWeight.normal,
+                    fontSize: 19,
+                  ),
+                ),
               ),
             ),
             Padding(
@@ -37,8 +48,11 @@ class Designer extends StatelessWidget {
                                       builder: (context) =>
                                           const WomenDesign()));
                             },
-                            child:
-                                Image.asset('assets/unsplash_iuCfaSIrqos.png'),
+                            child: Image.asset(
+                              'assets/unsplash_iuCfaSIrqos.png',
+                              width: 102,
+                              height: 124,
+                            ),
                           ),
                           const Text(
                             'Women',
@@ -59,10 +73,13 @@ class Designer extends StatelessWidget {
                               Navigator.push(
                                   context,
                                   MaterialPageRoute(
-                                      builder: (context) =>
-                                          const WomenDesign()));
+                                      builder: (context) => const MenDsign()));
                             },
-                            child: Image.asset('assets/Mask group (1).png'),
+                            child: Image.asset(
+                              'assets/Mask group (1).png',
+                              width: 102,
+                              height: 124,
+                            ),
                           ),
                           const Text(
                             'Men',
@@ -84,9 +101,13 @@ class Designer extends StatelessWidget {
                                   context,
                                   MaterialPageRoute(
                                       builder: (context) =>
-                                          const WomenDesign()));
+                                          const AccessoriesDesign()));
                             },
-                            child: Image.asset('assets/Mask group (2).png'),
+                            child: Image.asset(
+                              'assets/Mask group (2).png',
+                              width: 102,
+                              height: 124,
+                            ),
                           ),
                           const Text(
                             'Accessories',

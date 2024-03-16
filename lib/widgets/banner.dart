@@ -3,16 +3,21 @@ import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_application_1/widgets/shop_now.dart';
 
-class PromoCard2 extends StatelessWidget {
+class PromoCard2 extends StatefulWidget {
   const PromoCard2({super.key});
 
+  @override
+  State<PromoCard2> createState() => _PromoCard2State();
+}
+
+class _PromoCard2State extends State<PromoCard2> {
   @override
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.only(left: 30),
       child: Stack(
         children: [
-          Container(
+          SizedBox(
             //alignment: Alignment.topLeft,
             width: 324,
             height: 148,
