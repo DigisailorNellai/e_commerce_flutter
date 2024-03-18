@@ -2,9 +2,6 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_application_1/Screens/notification.dart';
-import 'package:flutter_application_1/widgets/banner.dart';
-import 'package:flutter_application_1/widgets/designers.dart';
-import 'package:flutter_application_1/widgets/sliding.dart';
 
 class Cart extends StatefulWidget {
   const Cart({super.key});
@@ -27,7 +24,7 @@ class _CartState extends State<Cart> {
                   Navigator.push(
                       context,
                       MaterialPageRoute(
-                          builder: (context) => const MainNotification()));
+                          builder: (context) => MainNotification()));
                 },
                 icon: const Icon(Icons.notifications))
           ],
@@ -57,16 +54,25 @@ class _CartState extends State<Cart> {
                 IconButton(
                     onPressed: () {},
                     style: const ButtonStyle(
-                        iconColor: MaterialStatePropertyAll(
-                            Color.fromARGB(255, 177, 39, 161))),
+                        iconColor: MaterialStatePropertyAll(Colors.purple)),
                     icon: const Icon(Icons.sort))
               ]),
-              const PromoCard2(),
-              const SizedBox(
-                height: 10,
-              ),
-              const Designer(),
-              Sliding(),
+              Stack(
+                children: [
+                  SizedBox(
+                    width: 324,
+                    height: 148,
+                    child: Image.asset('assets/Rectangle 1550.png'),
+                  ),
+                  const Align(
+                    alignment: Alignment.topCenter,
+                    child: Padding(
+                      padding: EdgeInsets.all(21),
+                      child: Text('New Collections'),
+                    ),
+                  )
+                ],
+              )
             ],
           ),
         ),

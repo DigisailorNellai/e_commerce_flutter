@@ -19,144 +19,141 @@ class _LoginState extends State<Login> {
       debugShowCheckedModeBanner: false,
       home: Scaffold(
         body: SingleChildScrollView(
-            child: Column(
-          crossAxisAlignment: CrossAxisAlignment.stretch,
-          children: [
-            Container(
-              padding: const EdgeInsets.all(10),
-              height: 200,
-              decoration: const BoxDecoration(
-                  image: DecorationImage(
-                image: AssetImage('assets/Mask group.png'),
-                fit: BoxFit.cover,
-              )),
-            ),
-            Container(
-              padding: const EdgeInsets.all(20),
-              alignment: Alignment.center,
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(50),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.stretch,
+            children: [
+              Container(
+                padding: const EdgeInsets.all(10),
+                height: 200,
+                decoration: const BoxDecoration(
+                    image: DecorationImage(
+                  image: AssetImage('assets/anner.jpg'),
+                  fit: BoxFit.cover,
+                )),
               ),
-              child: const Center(
-                child: Text(
-                  'Welcome Home',
-                  style: TextStyle(
-                    fontFamily: 'Poppins',
-                    fontWeight: FontWeight.bold,
-                    fontSize: 40,
-                    color: Colors.purple,
-                  ),
+              Container(
+                padding: const EdgeInsets.all(20),
+                alignment: Alignment.center,
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(50),
                 ),
-              ),
-            ),
-            //SizedBox(height: 20,),
-            Padding(
-              padding: const EdgeInsets.all(20),
-              child: Column(
-                //mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Container(
-                    width: 300,
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(20),
-                    ),
-                    child: TextField(
-                      decoration: InputDecoration(
-                        hintText: 'Enter your name',
-                        labelText: 'User Name',
-                        contentPadding: const EdgeInsets.all(10),
-                        border: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(20),
-                        ),
-                      ),
-                    ),
-                  ),
-                ],
-              ),
-            ),
-            //SizedBox(height: 5,),
-            Padding(
-              padding: const EdgeInsets.all(20),
-              child: Column(
-                //mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Container(
-                    width: 300,
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(20),
-                    ),
-                    child: TextFormField(
-                      obscureText: _obscureText,
-                      decoration: InputDecoration(
-                        labelText: 'Password',
-                        contentPadding: const EdgeInsets.all(10),
-                        suffixIcon: IconButton(
-                            icon: Icon(_obscureText
-                                ? Icons.visibility_off
-                                : Icons.visibility),
-                            onPressed: () {
-                              setState(() {
-                                _obscureText = !_obscureText;
-                              });
-                            }),
-                        border: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(20),
-                        ),
-                      ),
-                    ),
-                  ),
-                ],
-              ),
-            ),
-            //SizedBox(height: 5,),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Checkbox(
-                  value: acceptTerms,
-                  onChanged: (value) {
-                    setState(() {
-                      acceptTerms = value!;
-                    });
-                  },
-                ),
-                GestureDetector(
-                  onTap: () {
-                    Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                            builder: ((context) =>
-                                const TermsAndConditions())));
-                  },
-                  child: const Text(
-                    'Terms & Conditions',
+                child: const Center(
+                  child: Text(
+                    'Welcome Home',
                     style: TextStyle(
-                        fontFamily: 'Poppins',
-                        fontSize: 15,
-                        fontWeight: FontWeight.normal,
-                        decoration: TextDecoration.underline,
-                        color: Colors.blue),
+                      fontFamily: 'Poppins',
+                      fontWeight: FontWeight.bold,
+                      fontSize: 40,
+                      color: Colors.purple,
+                    ),
                   ),
                 ),
-              ],
-            ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                ElevatedButton(
-                  onPressed: acceptTerms
-                      ? () {
-                          Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                  builder: ((context) => const MainPage())));
-                          // Perform login action if terms are accepted
-                        }
-                      : null,
-                  style: ButtonStyle(
+              ),
+              //SizedBox(height: 20,),
+              Padding(
+                padding: const EdgeInsets.all(20),
+                child: Column(
+                  //mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Container(
+                      width: 300,
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(20),
+                      ),
+                      child: TextField(
+                        decoration: InputDecoration(
+                          hintText: 'Enter your name',
+                          labelText: 'User Name',
+                          contentPadding: const EdgeInsets.all(10),
+                          border: OutlineInputBorder(
+                            borderRadius: BorderRadius.circular(20),
+                          ),
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+              //SizedBox(height: 5,),
+              Padding(
+                padding: const EdgeInsets.all(20),
+                child: Column(
+                  //mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Container(
+                      width: 300,
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(20),
+                      ),
+                      child: TextFormField(
+                        obscureText: _obscureText,
+                        decoration: InputDecoration(
+                          labelText: 'Password',
+                          contentPadding: const EdgeInsets.all(10),
+                          suffixIcon: IconButton(
+                              icon: Icon(_obscureText
+                                  ? Icons.visibility_off
+                                  : Icons.visibility),
+                              onPressed: () {
+                                setState(() {
+                                  _obscureText = !_obscureText;
+                                });
+                              }),
+                          border: OutlineInputBorder(
+                            borderRadius: BorderRadius.circular(20),
+                          ),
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+              //SizedBox(height: 5,),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Checkbox(
+                    value: acceptTerms,
+                    onChanged: (value) {
+                      setState(() {
+                        acceptTerms = value!;
+                      });
+                    },
+                  ),
+                  GestureDetector(
+                    onTap: () {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: ((context) =>
+                                  const TermsAndConditions())));
+                    },
+                    child: const Text(
+                      'Terms & Conditions',
+                      style: TextStyle(
+                          fontFamily: 'Poppins',
+                          fontSize: 15,
+                          fontWeight: FontWeight.normal,
+                          decoration: TextDecoration.underline,
+                          color: Colors.blue),
+                    ),
+                  ),
+                ],
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  ElevatedButton(
+              onPressed: acceptTerms ? () {
+                Navigator.push(context,
+                 MaterialPageRoute(builder: ((context) => const MainPage()))
+                 );
+                // Perform login action if terms are accepted
+              } : null,
+              style: ButtonStyle(
                     //backgroundColor: MaterialStateProperty.all(Colors.blue),
-                    padding: MaterialStateProperty.all(
-                        const EdgeInsetsDirectional.symmetric(horizontal: 150)),
+                    padding: MaterialStateProperty.all(const EdgeInsetsDirectional.symmetric(horizontal: 150)),
+                    
                   ),
                   child: const Text(
                     'Login',
@@ -165,15 +162,15 @@ class _LoginState extends State<Login> {
                       fontFamily: 'Poppins',
                       fontWeight: FontWeight.bold,
                     ),
+                    ),
                   ),
-                ),
+                ],
+              ),
+  
               ],
-            ),
-
-            const SizedBox(
-              height: 20,
-            ),
-            Row(
+             ),
+             const SizedBox(height: 20,),
+             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 const Text(

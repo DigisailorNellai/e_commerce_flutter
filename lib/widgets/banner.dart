@@ -14,14 +14,18 @@ class _PromoCard2State extends State<PromoCard2> {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.only(left: 30),
+      padding: const EdgeInsets.only(left: 20),
       child: Stack(
         children: [
           SizedBox(
             //alignment: Alignment.topLeft,
-            width: 324,
+            width: 350,
             height: 148,
-            child: Image.asset('assets/Rectangle 1550.png'),
+            decoration: const BoxDecoration(
+              image: DecorationImage(
+                  image: AssetImage('assets/Rectangle 1550.png'),
+                  fit: BoxFit.cover),
+            ),
           ),
           const Positioned(
             top: 20,

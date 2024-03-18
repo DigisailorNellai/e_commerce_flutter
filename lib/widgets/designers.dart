@@ -18,18 +18,14 @@ class _DesignerState extends State<Designer> {
       child: SizedBox(
         child: Column(
           children: [
-            const Padding(
-              padding: EdgeInsets.only(left: 10),
-              child: Align(
-                alignment: Alignment.topLeft,
-                child: Text(
-                  'Category',
-                  style: TextStyle(
+            const Align(
+              alignment: Alignment.topLeft,
+              child: Text(
+                'Category',
+                style: TextStyle(
                     fontFamily: 'Poppins',
-                    fontWeight: FontWeight.normal,
-                    fontSize: 19,
-                  ),
-                ),
+                    fontSize: 20,
+                    fontWeight: FontWeight.normal),
               ),
             ),
             Padding(
@@ -48,11 +44,8 @@ class _DesignerState extends State<Designer> {
                                       builder: (context) =>
                                           const WomenDesign()));
                             },
-                            child: Image.asset(
-                              'assets/unsplash_iuCfaSIrqos.png',
-                              width: 102,
-                              height: 124,
-                            ),
+                            child:
+                                Image.asset('assets/unsplash_iuCfaSIrqos.png'),
                           ),
                           const Text(
                             'Women',
@@ -73,13 +66,10 @@ class _DesignerState extends State<Designer> {
                               Navigator.push(
                                   context,
                                   MaterialPageRoute(
-                                      builder: (context) => const MenDsign()));
+                                      builder: (context) =>
+                                          const WomenDesign()));
                             },
-                            child: Image.asset(
-                              'assets/Mask group (1).png',
-                              width: 102,
-                              height: 124,
-                            ),
+                            child: Image.asset('assets/Mask group (1).png'),
                           ),
                           const Text(
                             'Men',
@@ -101,13 +91,9 @@ class _DesignerState extends State<Designer> {
                                   context,
                                   MaterialPageRoute(
                                       builder: (context) =>
-                                          const AccessoriesDesign()));
+                                          const WomenDesign()));
                             },
-                            child: Image.asset(
-                              'assets/Mask group (2).png',
-                              width: 102,
-                              height: 124,
-                            ),
+                            child: Image.asset('assets/Mask group (2).png'),
                           ),
                           const Text(
                             'Accessories',
