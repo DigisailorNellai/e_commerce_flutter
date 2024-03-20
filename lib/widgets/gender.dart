@@ -20,6 +20,15 @@ class Gender extends StatelessWidget {
             )
           ]),
         ),
+        SizedBox(
+          height: 300,
+          child: TabBarView(children: [
+            Text(
+              'Hi',
+            ),
+            Text('Hlo')
+          ]),
+        )
         // TabBarView(
         //   children: [Text('Hi'), Text('Hlo')])
       ]),

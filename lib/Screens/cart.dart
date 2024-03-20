@@ -1,7 +1,9 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
+import 'package:flutter_application_1/Screens/flash%20sale.dart';
 import 'package:flutter_application_1/Screens/notification.dart';
+import 'package:flutter_application_1/widgets/banner.dart';
+import 'package:flutter_application_1/widgets/designers.dart';
+import 'package:flutter_application_1/widgets/sliding.dart';
 
 class Cart extends StatefulWidget {
   const Cart({super.key});
@@ -34,9 +36,9 @@ class _CartState extends State<Cart> {
             children: [
               Row(children: [
                 Container(
-                  padding: const EdgeInsets.all(10),
+                  padding: const EdgeInsets.only(left: 20),
                   width: 300,
-                  height: 70,
+                  height: 60,
                   child: TextField(
                     onChanged: (value) {},
                     decoration: InputDecoration(
@@ -57,22 +59,19 @@ class _CartState extends State<Cart> {
                         iconColor: MaterialStatePropertyAll(Colors.purple)),
                     icon: const Icon(Icons.sort))
               ]),
-              Stack(
-                children: [
-                  SizedBox(
-                    width: 324,
-                    height: 148,
-                    child: Image.asset('assets/Rectangle 1550.png'),
-                  ),
-                  const Align(
-                    alignment: Alignment.topCenter,
-                    child: Padding(
-                      padding: EdgeInsets.all(21),
-                      child: Text('New Collections'),
-                    ),
-                  )
-                ],
-              )
+              const SizedBox(
+                height: 10,
+              ),
+              const PromoCard2(),
+              const Designer(),
+              const SizedBox(
+                height: 10,
+              ),
+              Sliding(),
+              const SizedBox(
+                height: 3,
+              ),
+              const FlashSale(),
             ],
           ),
         ),

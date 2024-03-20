@@ -27,20 +27,31 @@ class Sliding extends StatelessWidget {
         padding: const EdgeInsets.only(left: 10),
         child: SizedBox(
             child: Column(children: [
-          const Padding(
-            padding: EdgeInsets.only(left: 10),
-            child: Align(
-              alignment: Alignment.topLeft,
-              child: Text(
-                'Designers',
-                style: TextStyle(
-                  fontFamily: 'Poppins',
-                  fontWeight: FontWeight.normal,
-                  fontSize: 18,
-                ),
-              ),
-            ),
-          ),
+          Padding(
+              padding: const EdgeInsets.only(left: 10),
+              child: Row(
+                children: [
+                  const Align(
+                    alignment: Alignment.topLeft,
+                    child: Text(
+                      'Designers',
+                      style: TextStyle(
+                        fontFamily: 'Poppins',
+                        fontWeight: FontWeight.normal,
+                        fontSize: 18,
+                      ),
+                    ),
+                  ),
+                  const SizedBox(
+                    width: 250,
+                  ),
+                  GestureDetector(
+                    onTap: () {},
+                    child:
+                        Image.asset('assets/iconamoon_arrow-up-2-duotone.png'),
+                  )
+                ],
+              )),
           SizedBox(
               height: 250,
               child: ListView.builder(

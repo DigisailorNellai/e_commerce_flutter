@@ -17,7 +17,7 @@ class _PromoCard2State extends State<PromoCard2> {
       padding: const EdgeInsets.only(left: 20),
       child: Stack(
         children: [
-          SizedBox(
+          Container(
             //alignment: Alignment.topLeft,
             width: 350,
             height: 148,
