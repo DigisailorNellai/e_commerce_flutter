@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/widgets/navigation_bar.dart';
 
 class Favorite extends StatefulWidget {
   const Favorite({super.key});
@@ -10,6 +11,8 @@ class Favorite extends StatefulWidget {
 class _FavoriteState extends State<Favorite> {
   @override
   Widget build(BuildContext context) {
-    return Container();
+    return Scaffold(
+      bottomNavigationBar: NavigationBarBottom(),
+    );
   }
 }
