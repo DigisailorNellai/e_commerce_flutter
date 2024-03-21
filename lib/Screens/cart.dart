@@ -1,9 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_application_1/Screens/flash%20sale.dart';
-import 'package:flutter_application_1/Screens/notification.dart';
-import 'package:flutter_application_1/widgets/banner.dart';
-import 'package:flutter_application_1/widgets/designers.dart';
-import 'package:flutter_application_1/widgets/sliding.dart';
+import 'package:flutter_application_1/widgets/navigation_bar.dart';
 
 class Cart extends StatefulWidget {
   const Cart({super.key});
@@ -15,67 +11,75 @@ class Cart extends StatefulWidget {
 class _CartState extends State<Cart> {
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      home: Scaffold(
-        appBar: AppBar(
-          leading: const Icon(Icons.menu),
-          actions: [
-            IconButton(
-                onPressed: () {
-                  Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                          builder: (context) => MainNotification()));
-                },
-                icon: const Icon(Icons.notifications))
-          ],
-        ),
-        body: SingleChildScrollView(
+    return Scaffold(
+      body: SingleChildScrollView(
+        child: Padding(
+          padding: const EdgeInsets.only(top: 32.38, left: 16.19),
           child: Column(
             children: [
-              Row(children: [
-                Container(
-                  padding: const EdgeInsets.only(left: 20),
-                  width: 300,
-                  height: 60,
-                  child: TextField(
-                    onChanged: (value) {},
-                    decoration: InputDecoration(
-                        prefixIcon: const Icon(Icons.search),
-                        hintText: 'search',
-                        //filled: true,
-                        //contentPadding: const EdgeInsets.symmetric(vertical: 272, horizontal: 42),
-                        border: OutlineInputBorder(
-                            borderRadius: BorderRadius.circular(20))),
+              Row(
+                children: [
+                  Container(
+                    padding: const EdgeInsets.all(10),
+                    width: 300,
+                    height: 70,
+                    child: TextField(
+                      onChanged: (value) {},
+                      decoration: InputDecoration(
+                          prefixIcon: const Icon(Icons.search),
+                          hintText: 'search',
+                          //filled: true,
+                          //contentPadding: const EdgeInsets.symmetric(vertical: 272, horizontal: 42),
+                          border: OutlineInputBorder(
+                              borderRadius: BorderRadius.circular(20))),
+                    ),
                   ),
-                ),
-                const SizedBox(
-                  width: 30,
-                ),
-                IconButton(
-                    onPressed: () {},
-                    style: const ButtonStyle(
-                        iconColor: MaterialStatePropertyAll(Colors.purple)),
-                    icon: const Icon(Icons.sort))
-              ]),
-              const SizedBox(
-                height: 10,
+                ],
               ),
-              const PromoCard2(),
-              const Designer(),
-              const SizedBox(
-                height: 10,
-              ),
-              Sliding(),
-              const SizedBox(
-                height: 3,
-              ),
-              const FlashSale(),
+              Column(children: [
+                Row(
+                  children: [
+                    const Padding(
+                      padding: EdgeInsets.only(left: 5),
+                      child: Text(
+                        'Last 3 Months',
+                        style: TextStyle(
+                            fontFamily: 'poppins',
+                            fontSize: 12,
+                            fontWeight: FontWeight.bold),
+                      ),
+                    ),
+                    SizedBox(
+                      width: 100,
+                    ),
+                    Row(
+                      children: [
+                        Container(
+                            padding: const EdgeInsets.all(8),
+                            height: 21,
+                            width: 77,
+                            child: Align(
+                              alignment: Alignment.topLeft,
+                              child: IconButton(
+                                  onPressed: () {}, icon: Icon(Icons.tune)),
+                            )),
+                        const Align(
+                          alignment: Alignment.bottomRight,
+                          child: Text('Filter'),
+                        )
+                      ],
+                    )
+                  ],
+                )
+              ])
             ],
           ),
         ),
       ),
     );
+
+    // ignore: dead_code
+    bottomNavigationBar:
+    const NavigationBarBottom();
   }
 }
