@@ -1,18 +1,32 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_application_1/widgets/navigation_bar.dart';
 
-class Favorite extends StatefulWidget {
-  const Favorite({super.key});
+class WishlistPage extends StatelessWidget {
+  final List likedImageUrls;
+  
 
-  @override
-  State<Favorite> createState() => _FavoriteState();
-}
+  const WishlistPage({required this.likedImageUrls,
+  });
 
-class _FavoriteState extends State<Favorite> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      bottomNavigationBar: NavigationBarBottom(),
+      appBar: AppBar(
+        title: Text('Wishlist'),
+      ),
+      body: GridView.builder(
+        gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+          crossAxisCount: 2,
+          mainAxisSpacing: 4.0,
+          crossAxisSpacing: 4.0,
+        ),
+        itemCount: likedImageUrls.length,
+        itemBuilder: (context, index) {
+          final  item = likedImageUrls[index];
+          return ListTile(
+            leading: Image.asset(item.likedImageUrls),
+          );
+        },
+      ),
     );
   }
 }

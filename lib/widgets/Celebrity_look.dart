@@ -29,6 +29,7 @@ class _CelebrityLookState extends State<CelebrityLook> {
               ),
             ),
           ),
+          SizedBox(height: 10,),
           Stack(children: [
             Wrap(
               spacing: 10.0,

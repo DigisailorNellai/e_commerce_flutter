@@ -2,6 +2,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/Screens/flash%20sale.dart';
 import 'package:flutter_application_1/Screens/notification.dart';
+import 'package:flutter_application_1/widgets/Celebrity_look.dart';
 import 'package:flutter_application_1/widgets/banner.dart';
 import 'package:flutter_application_1/widgets/designers.dart';
 import 'package:flutter_application_1/widgets/navigation_bar.dart';
@@ -73,9 +74,8 @@ class _MainPageState extends State<MainPage> {
                 height: 10,
               ),
               Sliding(),
-              const SizedBox(
-                height: 3,
-              ),
+              const CelebrityLook(),
+              SizedBox(height: 15,),
               const FlashSale(),
             ],
           ),

@@ -12,7 +12,7 @@ class NavigationBarBottom extends StatefulWidget {
 }
 
 class _NavigationBarBottomState extends State<NavigationBarBottom> {
-  late int MyIndex = 0;
+ late int MyIndex = 0;
 
   @override
   Widget build(BuildContext context) {
@@ -23,7 +23,7 @@ class _NavigationBarBottomState extends State<NavigationBarBottom> {
         child: BottomNavigationBar(
           type: BottomNavigationBarType.fixed,
           backgroundColor: Colors.purple,
-          selectedItemColor: Colors.white,
+          
           onTap: (index) {
             setState(() {
               MyIndex = index;
@@ -40,7 +40,7 @@ class _NavigationBarBottomState extends State<NavigationBarBottom> {
                 // Navigate to the second page
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => Favorite()),
+                  MaterialPageRoute(builder: (context) => const  WishlistPage(likedImageUrls: [],)),
                 );
                 break;
               case 2:
@@ -61,6 +61,7 @@ class _NavigationBarBottomState extends State<NavigationBarBottom> {
             }
           },
           currentIndex: MyIndex,
+          selectedItemColor: Colors.white,
           items: const [
             BottomNavigationBarItem(icon: Icon(Icons.home), label: ''),
             BottomNavigationBarItem(icon: Icon(Icons.favorite), label: ''),
