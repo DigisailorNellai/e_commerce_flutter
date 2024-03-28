@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/Screens/payment.dart';
 
 class OrderConfirmation extends StatefulWidget {
   const OrderConfirmation({super.key});
@@ -218,11 +219,18 @@ class _OrderConfirmationState extends State<OrderConfirmation> {
                       trailing: Icon(Icons.add),
                       ),
                       const Divider(),
-                      const Text('Cash on Delivery',
-                      style: TextStyle(
-                        fontWeight: FontWeight.bold,
-                        fontSize: 16
-                      ),),
+                      Row(
+                        children: [
+                          ElevatedButton(onPressed: (){
+
+                          }, child: const Text('Cash on Delivery')),
+                          const SizedBox(width: 50,),
+                          ElevatedButton(onPressed: (){
+                              Navigator.push(context, 
+                              MaterialPageRoute(builder: (context) => const Payment()));
+                          }, child: const Text('Pay Now'))
+                        ],
+                      )
 
                 ],
               )

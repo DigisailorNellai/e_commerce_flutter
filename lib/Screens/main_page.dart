@@ -75,7 +75,7 @@ class _MainPageState extends State<MainPage> {
               ),
               Sliding(),
               const CelebrityLook(),
-              SizedBox(height: 15,),
+             const SizedBox(height: 15,),
               const FlashSale(),
             ],
           ),

@@ -1,32 +1,23 @@
 import 'package:flutter/material.dart';
 
-class WishlistPage extends StatelessWidget {
-  final List likedImageUrls;
+class WishlistPage extends StatefulWidget {
+
+  const WishlistPage({super.key});
+ 
+  @override
+  State<WishlistPage> createState() => _WishlistPageState();
+}
+
+class _WishlistPageState extends State<WishlistPage> {
   
-
-  const WishlistPage({required this.likedImageUrls,
-  });
-
+ 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Wishlist'),
+        title: const Text('Wishlist'),
       ),
-      body: GridView.builder(
-        gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-          crossAxisCount: 2,
-          mainAxisSpacing: 4.0,
-          crossAxisSpacing: 4.0,
-        ),
-        itemCount: likedImageUrls.length,
-        itemBuilder: (context, index) {
-          final  item = likedImageUrls[index];
-          return ListTile(
-            leading: Image.asset(item.likedImageUrls),
-          );
-        },
-      ),
+      
     );
   }
 }
