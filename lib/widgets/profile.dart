@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
+import 'package:flutter_application_1/Screens/bag.dart';
 
 
 class Profile extends StatefulWidget {
@@ -30,7 +31,10 @@ class _ProfileState extends State<Profile> {
           width: 280,
         ),
         GestureDetector(
-          onTap: () {},
+          onTap: () {
+            Navigator.push(context,
+             MaterialPageRoute(builder: (context) => const Bag1()));
+          },
           child: Image.asset('assets/iconamoon_arrow-up-2-duotone.png'),
         )
       ]),

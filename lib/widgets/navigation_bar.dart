@@ -40,7 +40,7 @@ class _NavigationBarBottomState extends State<NavigationBarBottom> {
                 // Navigate to the second page
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => const  WishlistPage()),
+                  MaterialPageRoute(builder: (context) =>   WishlistPage(likedImages: [])),
                 );
                 break;
               case 2:

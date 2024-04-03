@@ -16,6 +16,19 @@ class _FlashSaleState extends State<FlashSale> {
    bool likedImage1 = false, likedImage2 = false,likedImage3 = false, likedImage4 = false;
    bool likedImage5 = false, likedImage6 = false,likedImage7 = false, likedImage8 = false;
   
+  List<Image> images = [
+      Image.asset('assets/productScreen.png'),
+  ];
+  var image1 = Image.asset('assets/productScreen.png');
+ final List likedImages = [];
+
+void toggleLike( image) {
+    if (likedImages.contains(image)) {
+      likedImages.remove(image);
+    } else {
+      likedImages.add(image);
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -65,7 +78,9 @@ class _FlashSaleState extends State<FlashSale> {
                   child:IconButton(onPressed: (){
                     setState(() {
                       likedImage1= !likedImage1;
+                      
                     });
+                      toggleLike(images[0]);
                   }, icon: Icon(
                       likedImage1 ? Icons.favorite : Icons.favorite_border,
                       color: likedImage1 ? Colors.white : Colors.black
