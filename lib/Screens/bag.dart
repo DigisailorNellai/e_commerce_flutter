@@ -2,7 +2,9 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:flutter/widgets.dart';
-import 'package:flutter_application_1/Screens/payment.dart';
+import 'package:flutter_application_1/Screens/order_confiration.dart';
+import 'package:flutter_application_1/Screens/product_screen.dart';
+import 'package:flutter_application_1/Screens/user.dart';
 
 class Bag1 extends StatefulWidget {
   const Bag1({super.key});
@@ -21,10 +23,10 @@ class _BagState extends State<Bag1> {
       debugShowCheckedModeBanner: false,
       home: Scaffold(
         appBar: AppBar(
-            leading: const Icon(
-              Icons.close,
-              size: 20,
-            ),
+            leading:  IconButton(onPressed: () {
+                Navigator.push(context,
+                 MaterialPageRoute(builder: (Context) => User()));
+            }, icon: const Icon(Icons.close)),
             actions: const [
               Icon(
                 Icons.favorite_border_outlined,
@@ -490,7 +492,7 @@ class _BagState extends State<Bag1> {
                 child: ElevatedButton(
                   onPressed: () {
                     Navigator.push(context,
-                        MaterialPageRoute(builder: (context) => const Payment()));
+                        MaterialPageRoute(builder: (context) => const OrderConfirmation()));
                   },
                   style: ElevatedButton.styleFrom(
                     backgroundColor: Color.fromARGB(255, 7, 6, 6),
@@ -498,8 +500,7 @@ class _BagState extends State<Bag1> {
                     shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(30)),
 
-                    // padding: MaterialStateProperty.all(
-                    //     const EdgeInsetsDirectional.symmetric(horizontal: 10)),
+                    
                   ),
                   child: const Text(
                     'Proceed to Payment',

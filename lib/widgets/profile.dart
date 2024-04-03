@@ -21,7 +21,7 @@ class _ProfileState extends State<Profile> {
       
       Row(children: [
         const Text(
-          'My Card',
+          'My Cart',
           style: TextStyle(
             fontSize: 18,
             fontWeight: FontWeight.bold,

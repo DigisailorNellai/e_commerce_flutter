@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/Screens/order_confiration.dart';
+import 'package:flutter_application_1/Screens/user.dart';
 
 class ProductScreen extends StatefulWidget {
   const ProductScreen({super.key});
@@ -90,7 +91,7 @@ class _ProductScreenState extends State<ProductScreen> {
                const SizedBox(width: 10,),
                TextButton.icon(onPressed: (){
                     Navigator.push(context, 
-                    MaterialPageRoute(builder: (context) => const OrderConfirmation()));
+                    MaterialPageRoute(builder: (context) => const User()));
                }, icon: const Icon(Icons.shopping_bag), label: const Text('Add to Bag'),
                style: const ButtonStyle(
                 backgroundColor: MaterialStatePropertyAll(Colors.black)
