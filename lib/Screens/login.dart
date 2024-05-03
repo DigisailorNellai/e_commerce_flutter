@@ -2,6 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_application_1/Screens/Terms_and_Conditions.dart';
 import 'package:flutter_application_1/Screens/main_page.dart';
 import 'package:flutter_application_1/Screens/signup.dart';
+import 'dart:convert';
+import 'package:http/http.dart' as http;
+
+
 
 class Login extends StatefulWidget {
   const Login({super.key});
@@ -13,11 +17,12 @@ class Login extends StatefulWidget {
 class _LoginState extends State<Login> {
   bool acceptTerms = false, _obscureText = true;
 
+  final TextEditingController emailController = TextEditingController();
+  final TextEditingController passwordController = TextEditingController();
+
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-        debugShowCheckedModeBanner: false,
-        home: Scaffold(
+    return Scaffold(
           body: SingleChildScrollView(
               child: Column(
                   crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -62,8 +67,8 @@ class _LoginState extends State<Login> {
                         ),
                         child: TextField(
                           decoration: InputDecoration(
-                            hintText: 'Enter your name',
-                            labelText: 'User Name',
+                            hintText: 'Enter your Eamil',
+                            labelText: 'Email',
                             contentPadding: const EdgeInsets.all(10),
                             border: OutlineInputBorder(
                               borderRadius: BorderRadius.circular(20),
@@ -146,11 +151,7 @@ class _LoginState extends State<Login> {
                     ElevatedButton(
                       onPressed: acceptTerms
                           ? () {
-                              Navigator.push(
-                                  context,
-                                  MaterialPageRoute(
-                                      builder: ((context) =>
-                                          const MainPage())));
+                              _login(context);
                               // Perform login action if terms are accepted
                             }
                           : null,
@@ -206,7 +207,52 @@ class _LoginState extends State<Login> {
                         ))
                   ],
                 ),
-              ])),
-        ));
+              ])
+              ),
+        
+        );
+  }
+
+
+Future<void> _login(BuildContext context) async {
+    String email = emailController.text;
+    String password = passwordController.text;
+    
+    // if (email.isEmpty || password.isEmpty){
+    //   ScaffoldMessenger.of(context).showSnackBar(
+    //     const SnackBar(content: Text('Enter all fields'))
+    //   );
+    //   return;
+
+    // }
+    Map<String, dynamic> requestbody = {
+    'email' : email,
+    'password' : password,
+};
+var url = Uri.parse('http://localhost:3003/api/auth/login');
+try{
+
+var response = await http.post(url,
+    body: jsonEncode(requestbody),
+    headers: {
+      'content-Type': 'application/json'
+    }
+);
+if(response.statusCode == 200){
+  ScaffoldMessenger.of(context).showSnackBar(
+        const SnackBar(content: Text('Loggedin successfully')));
+
+  Navigator.push(context, MaterialPageRoute(builder: (context) => MainPage()));  
+}
+else {
+  ScaffoldMessenger.of(context).showSnackBar(
+        const SnackBar(content: Text('Cannot Login')));
+}
+
+}
+catch(e){
+  ScaffoldMessenger.of(context).showSnackBar(
+       SnackBar(content: Text('Error occur: $e')));
+}
   }
 }
